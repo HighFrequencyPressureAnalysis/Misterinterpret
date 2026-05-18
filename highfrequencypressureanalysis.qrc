@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/HighFrequencyPressureAnalysis">
+        <file>res/Icon/station.jpeg</file>
+        <file>res/Icon/well.jpeg</file>
+        <file>res/Icon/fracstage.jpeg</file>
+        <file>res/Icon/fracbasic.jpeg</file>
+        <file>res/Icon/operaplot.jpeg</file>
+        <file>res/Icon/loaddefinedata.jpg</file>
+        <file>res/Icon/loadensdata.jpg</file>
+        <file>res/Icon/block.jpg</file>
+        <file>res/Icon/delete.jpg</file>
+        <file>res/Icon/rename.jpg</file>
+        <file>res/Icon/bgpos.jpg</file>
+        <file>res/Icon/choose_press.png</file>
+        <file>res/Icon/axis_press.png</file>
+        <file>res/Icon/axis_rate.png</file>
+        <file>res/Icon/axis_time.png</file>
+        <file>res/Icon/date.png</file>
+        <file>res/Icon/drag_mouse.jpg</file>
+        <file>res/Icon/init.jpg</file>
+        <file>res/Icon/legend.jpg</file>
+        <file>res/Icon/local_time.jpg</file>
+        <file>res/Icon/output.jpg</file>
+        <file>res/Icon/pic.jpeg</file>
+        <file>res/Icon/setting.jpg</file>
+        <file>res/Icon/showdata.png</file>
+        <file>res/Icon/zoom_mouse.jpg</file>
+        <file>res/Icon/zoomin.jpg</file>
+        <file>res/Icon/zoomout.jpg</file>
+        <file>res/Icon/table.jpg</file>
+        <file>res/Icon/clipborad.jpg</file>
+        <file>res/Icon/excel.jpg</file>
+        <file>res/Icon/txt.jpg</file>
+        <file>res/Icon/waiting.gif</file>
+        <file>res/Icon/autocal.jpg</file>
+        <file>res/Icon/mergedata.jpg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BB740F6B-C2C6-4AAD-AF75-88CCA5864A82}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.12.12_msvc2017_64</QtInstall>
+    <QtModules>core;xml;sql;gui;axserver;axcontainer;widgets;printsupport;concurrent;openglextensions</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.12.12_msvc2017_64</QtInstall>
+    <QtModules>core;xml;sql;opengl;gui;axcontainer;widgets;printsupport;concurrent;openglextensions</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>$(ProjectDir)\Eigen;$(ProjectDir)\mygsl\include;$(ProjectDir)\FFTW;$(ProjectDir)\SARibbonBar;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib_x64;$(ProjectDir)\SARibbonLibDll;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>$(ProjectDir)\Eigen;$(ProjectDir)\mygsl\include;$(ProjectDir)\SARibbonBar;$(ProjectDir)\FFTW;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib_x64;$(ProjectDir)\SARibbonLibDll;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>QCUSTOMPLOT_USE_OPENGL;_SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\FFTW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>26498;26495;4091;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>Default</LanguageStandard>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;SARibbonBard.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /D "$(ProjectDir)SARibbonLibDll\SARibbonBard.dll" "$(OutDir)"
+"D:\Qt\Qt5.12.12\5.12.12\msvc2017_64\bin\windeployqt.exe" --debug --compiler-runtime --force "$(TargetPath)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;cblas_vc14_x64.lib;gsl_2_3_vc14_x64.lib;libfftw3-3.lib;SARibbonBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\FFTW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /D "$(ProjectDir)SARibbonLibDll\SARibbonBar.dll" "$(OutDir)"
+"D:\Qt\Qt5.12.12\5.12.12\msvc2017_64\bin\windeployqt.exe" --release --compiler-runtime --force "$(TargetPath)"</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <LanguageStandard>Default</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AppVersion.cpp" />
+    <ClCompile Include="DataProcess.cpp" />
+    <ClCompile Include="DataTypeMap.cpp" />
+    <ClCompile Include="dialogexportplotdata.cpp" />
+    <ClCompile Include="dialogfracbasic.cpp" />
+    <ClCompile Include="dialogfracper.cpp" />
+    <ClCompile Include="dialoghistorysetting.cpp" />
+    <ClCompile Include="dialogloaddata.cpp" />
+    <ClCompile Include="dialogparallel.cpp" />
+    <ClCompile Include="dialogparallelexport.cpp" />
+    <ClCompile Include="dialogwaiting.cpp" />
+    <ClCompile Include="dialogwaitingreaddata.cpp" />
+    <ClCompile Include="ExportPlotDataModel.cpp" />
+    <ClCompile Include="graph.cpp" />
+    <ClCompile Include="GraphPlotSetting.cpp" />
+    <ClCompile Include="HistoryDateModel.cpp" />
+    <ClCompile Include="HistoryLoadDataModel.cpp" />
+    <ClCompile Include="HistorySettingModel.cpp" />
+    <ClCompile Include="loadtablemodel.cpp" />
+    <ClCompile Include="MessageBoxControler.cpp" />
+    <ClCompile Include="numberitemdelegate.cpp" />
+    <ClCompile Include="plot.cpp" />
+    <ClCompile Include="plotopera.cpp" />
+    <ClCompile Include="plottoolbar.cpp" />
+    <ClCompile Include="plotwh.cpp" />
+    <ClCompile Include="qcustomplot.cpp" />
+    <ClCompile Include="readonlydelegate.cpp" />
+    <ClCompile Include="rubberband.cpp" />
+    <ClCompile Include="rubberbandzoom.cpp" />
+    <ClCompile Include="tablemodel.cpp" />
+    <ClCompile Include="tableview.cpp" />
+    <ClCompile Include="TableViewControler.cpp" />
+    <ClCompile Include="tableviewloadhistory.cpp" />
+    <ClCompile Include="tableviewperpos.cpp" />
+    <ClCompile Include="tablewidgetexportdata.cpp" />
+    <ClCompile Include="threadexportdata.cpp" />
+    <ClCompile Include="threadreadhistorydata.cpp" />
+    <ClCompile Include="toolbutton.cpp" />
+    <ClCompile Include="UnitChange.cpp" />
+    <ClCompile Include="WellDataControler.cpp" />
+    <ClCompile Include="WellDataModel.cpp" />
+    <ClCompile Include="widgetbasicfrac.cpp" />
+    <ClCompile Include="widgetfracper.cpp" />
+    <ClCompile Include="workarea.cpp" />
+    <ClCompile Include="workareafracbasic.cpp" />
+    <None Include="freeglut.dll" />
+    <None Include="SARibbonLibDll\SARibbonBard.dll" />
+    <QtRcc Include="highfrequencypressureanalysis.qrc" />
+    <QtMoc Include="highfrequencypressureanalysis.h" />
+    <ClCompile Include="category.cpp" />
+    <ClCompile Include="CpuMemCal.cpp" />
+    <ClCompile Include="cpumemorylabel.cpp" />
+    <ClCompile Include="highfrequencypressureanalysis.cpp" />
+    <ClCompile Include="main.cpp" />
+    <None Include="HighFrequencyPressureAnalysis.ico" />
+    <ResourceCompile Include="HighFrequencyPressureAnalysis.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="category.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppVersion.h" />
+    <ClInclude Include="ConstBasic.h" />
+    <ClInclude Include="ConstCharacter.h" />
+    <ClInclude Include="ConstDataType.h" />
+    <ClInclude Include="ConstFileConfig.h" />
+    <ClInclude Include="ConstUnit.h" />
+    <ClInclude Include="CpuMemCal.h" />
+    <QtMoc Include="dialogfracbasic.h" />
+    <QtMoc Include="graph.h" />
+    <QtMoc Include="dialogfracper.h" />
+    <QtMoc Include="dialogloaddata.h" />
+    <QtMoc Include="dialogwaitingreaddata.h" />
+    <QtMoc Include="dialogwaiting.h" />
+    <ClInclude Include="DataProcess.h" />
+    <ClInclude Include="DataTypeMap.h" />
+    <QtMoc Include="dialoghistorysetting.h" />
+    <QtMoc Include="dialogexportplotdata.h" />
+    <QtMoc Include="dialogparallelexport.h" />
+    <QtMoc Include="dialogparallel.h" />
+    <ClInclude Include="ExportPlotDataModel.h" />
+    <ClInclude Include="GraphPlotSetting.h" />
+    <ClInclude Include="HistoryDateModel.h" />
+    <ClInclude Include="HistoryLoadDataModel.h" />
+    <ClInclude Include="HistorySettingModel.h" />
+    <QtMoc Include="loadtablemodel.h" />
+    <ClInclude Include="MessageBoxControler.h" />
+    <QtMoc Include="readonlydelegate.h" />
+    <QtMoc Include="numberitemdelegate.h" />
+    <QtMoc Include="plot.h" />
+    <QtMoc Include="qcustomplot.h" />
+    <QtMoc Include="plottoolbar.h" />
+    <QtMoc Include="rubberband.h" />
+    <QtMoc Include="rubberbandzoom.h" />
+    <QtMoc Include="plotopera.h" />
+    <QtMoc Include="plotwh.h" />
+    <ClInclude Include="SingleTemplate.h" />
+    <QtMoc Include="widgetbasicfrac.h" />
+    <QtMoc Include="workareafracbasic.h" />
+    <QtMoc Include="widgetfracper.h" />
+    <QtMoc Include="tableview.h" />
+    <QtMoc Include="tableviewperpos.h" />
+    <QtMoc Include="toolbutton.h" />
+    <QtMoc Include="threadreadhistorydata.h" />
+    <QtMoc Include="tableviewloadhistory.h" />
+    <QtMoc Include="tablemodel.h" />
+    <ClInclude Include="TableViewControler.h" />
+    <QtMoc Include="threadexportdata.h" />
+    <QtMoc Include="tablewidgetexportdata.h" />
+    <ClInclude Include="UnitChange.h" />
+    <ClInclude Include="WellDataModel.h" />
+    <ClInclude Include="x64\Debug\qt\uic\ui_dialogfracbasic.h" />
+    <ClInclude Include="x64\Debug\qt\uic\ui_widgetbasicfrac.h" />
+    <ClInclude Include="x64\Debug\qt\uic\ui_widgetfracper.h" />
+    <ClInclude Include="x64\Debug\qt\uic\ui_workarea.h" />
+    <QtMoc Include="WellDataControler.h" />
+    <QtMoc Include="workarea.h" />
+    <QtMoc Include="cpumemorylabel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="dialogexportplotdata.ui" />
+    <QtUic Include="dialogfracbasic.ui" />
+    <QtUic Include="dialogfracper.ui" />
+    <QtUic Include="dialoghistorysetting.ui" />
+    <QtUic Include="dialogloaddata.ui" />
+    <QtUic Include="dialogparallel.ui" />
+    <QtUic Include="dialogwaiting.ui" />
+    <QtUic Include="widgetbasicfrac.ui" />
+    <QtUic Include="widgetfracper.ui" />
+    <QtUic Include="workarea.ui" />
+    <QtUic Include="workareafracbasic.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="freeglut.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

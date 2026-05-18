@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="MainWindowsHFPA">
+      <UniqueIdentifier>{80d32333-174c-48aa-aeb7-0af79882038f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Category">
+      <UniqueIdentifier>{00b5043d-bf83-43e4-b4b1-520a02966a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CpuMeory">
+      <UniqueIdentifier>{f9e09d8c-1a23-4e4d-a6b4-6fda26df9b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorkArea">
+      <UniqueIdentifier>{f9dfba6e-2f67-4c46-afd2-36eac8ec7c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WellData">
+      <UniqueIdentifier>{2efab035-6721-41b0-9bfc-5b811c2f1b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessgeBoxControler">
+      <UniqueIdentifier>{58cb2368-e4ba-476c-8bde-d9c52e70ce6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{fa1cf46e-c54e-40c1-8490-d620f82d012a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\FracBasic">
+      <UniqueIdentifier>{e4b9e850-51e1-4d91-988f-fd09b06114bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorkArea\FracBasic">
+      <UniqueIdentifier>{2cc6cf73-8ef9-4c07-994e-b8e9b4f20c14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\FracPer">
+      <UniqueIdentifier>{2c03f28c-aaa8-4198-8802-50bdc307f3d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TableView">
+      <UniqueIdentifier>{37bdcaf8-08a6-4fc3-bd08-dc49e2047117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plot">
+      <UniqueIdentifier>{0ffd08ea-ce66-4ea6-847e-e12e642f1c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WellDataModel">
+      <UniqueIdentifier>{97a33c7c-c5d6-45e1-b581-b07c28b83466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AppVersion">
+      <UniqueIdentifier>{5c32943e-131b-4191-9665-6a7ff6e5ac68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\FracOpera">
+      <UniqueIdentifier>{058f46be-4023-481a-a346-72ff7c15c854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LoadSettingModel">
+      <UniqueIdentifier>{9b945b45-2e9f-413c-a52c-da4dece04543}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\Waiting">
+      <UniqueIdentifier>{aa0909ea-cc26-444b-b3cf-e28b81b2e9a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{dfec43fa-27e9-480f-ab49-158b504275dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataProcess">
+      <UniqueIdentifier>{19c6a394-84e3-4acd-956e-47d51b41a3e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitChange">
+      <UniqueIdentifier>{b52ef122-2776-4e7d-9edc-b6507f85210a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\HistorySetting">
+      <UniqueIdentifier>{276fd717-bfbc-4a31-8555-6d84369168fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HistoryDateModel">
+      <UniqueIdentifier>{e8de3e5a-5b07-495a-add1-ce348f2e59eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="highfrequencypressureanalysis.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="HighFrequencyPressureAnalysis.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <ResourceCompile Include="HighFrequencyPressureAnalysis.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="highfrequencypressureanalysis.cpp">
+      <Filter>MainWindowsHFPA</Filter>
+    </ClCompile>
+    <ClCompile Include="category.cpp">
+      <Filter>Category</Filter>
+    </ClCompile>
+    <ClCompile Include="CpuMemCal.cpp">
+      <Filter>CpuMeory</Filter>
+    </ClCompile>
+    <ClCompile Include="cpumemorylabel.cpp">
+      <Filter>CpuMeory</Filter>
+    </ClCompile>
+    <ClCompile Include="workarea.cpp">
+      <Filter>WorkArea</Filter>
+    </ClCompile>
+    <ClCompile Include="WellDataControler.cpp">
+      <Filter>WellData</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBoxControler.cpp">
+      <Filter>MessgeBoxControler</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogfracbasic.cpp">
+      <Filter>Dialog\FracBasic</Filter>
+    </ClCompile>
+    <ClCompile Include="widgetbasicfrac.cpp">
+      <Filter>Dialog\FracBasic</Filter>
+    </ClCompile>
+    <ClCompile Include="workareafracbasic.cpp">
+      <Filter>WorkArea\FracBasic</Filter>
+    </ClCompile>
+    <ClCompile Include="widgetfracper.cpp">
+      <Filter>Dialog\FracPer</Filter>
+    </ClCompile>
+    <ClCompile Include="tableview.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="tableviewperpos.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="readonlydelegate.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="numberitemdelegate.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="plot.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="qcustomplot.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="plottoolbar.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="graph.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphPlotSetting.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="rubberband.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="rubberbandzoom.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogfracper.cpp">
+      <Filter>Dialog\FracPer</Filter>
+    </ClCompile>
+    <ClCompile Include="WellDataModel.cpp">
+      <Filter>WellDataModel</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AppVersion.cpp">
+      <Filter>AppVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="toolbutton.cpp">
+      <Filter>Category</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogloaddata.cpp">
+      <Filter>Dialog\FracOpera</Filter>
+    </ClCompile>
+    <ClCompile Include="HistorySettingModel.cpp">
+      <Filter>LoadSettingModel</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoryLoadDataModel.cpp">
+      <Filter>LoadSettingModel</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogwaitingreaddata.cpp">
+      <Filter>Dialog\Waiting</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogwaiting.cpp">
+      <Filter>Dialog\Waiting</Filter>
+    </ClCompile>
+    <ClCompile Include="threadreadhistorydata.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="DataProcess.cpp">
+      <Filter>DataProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="tableviewloadhistory.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="loadtablemodel.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="tablemodel.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitChange.cpp">
+      <Filter>UnitChange</Filter>
+    </ClCompile>
+    <ClCompile Include="DataTypeMap.cpp">
+      <Filter>UnitChange</Filter>
+    </ClCompile>
+    <ClCompile Include="dialoghistorysetting.cpp">
+      <Filter>Dialog\HistorySetting</Filter>
+    </ClCompile>
+    <ClCompile Include="TableViewControler.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+    <ClCompile Include="plotopera.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoryDateModel.cpp">
+      <Filter>HistoryDateModel</Filter>
+    </ClCompile>
+    <ClCompile Include="plotwh.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportPlotDataModel.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogexportplotdata.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogparallelexport.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogparallel.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="threadexportdata.cpp">
+      <Filter>Plot</Filter>
+    </ClCompile>
+    <ClCompile Include="tablewidgetexportdata.cpp">
+      <Filter>TableView</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="highfrequencypressureanalysis.h">
+      <Filter>MainWindowsHFPA</Filter>
+    </QtMoc>
+    <QtMoc Include="category.h">
+      <Filter>Category</Filter>
+    </QtMoc>
+    <QtMoc Include="cpumemorylabel.h">
+      <Filter>CpuMeory</Filter>
+    </QtMoc>
+    <QtMoc Include="workarea.h">
+      <Filter>WorkArea</Filter>
+    </QtMoc>
+    <QtMoc Include="WellDataControler.h">
+      <Filter>WellData</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogfracbasic.h">
+      <Filter>Dialog\FracBasic</Filter>
+    </QtMoc>
+    <QtMoc Include="widgetbasicfrac.h">
+      <Filter>Dialog\FracBasic</Filter>
+    </QtMoc>
+    <QtMoc Include="workareafracbasic.h">
+      <Filter>WorkArea\FracBasic</Filter>
+    </QtMoc>
+    <QtMoc Include="widgetfracper.h">
+      <Filter>Dialog\FracPer</Filter>
+    </QtMoc>
+    <QtMoc Include="tableview.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+    <QtMoc Include="tableviewperpos.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+    <QtMoc Include="readonlydelegate.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+    <QtMoc Include="numberitemdelegate.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+    <QtMoc Include="plot.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="qcustomplot.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="plottoolbar.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="graph.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="rubberband.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="rubberbandzoom.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogfracper.h">
+      <Filter>Dialog\FracPer</Filter>
+    </QtMoc>
+    <QtMoc Include="toolbutton.h">
+      <Filter>Category</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogloaddata.h">
+      <Filter>Dialog\FracOpera</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogwaitingreaddata.h">
+      <Filter>Dialog\Waiting</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogwaiting.h">
+      <Filter>Dialog\Waiting</Filter>
+    </QtMoc>
+    <QtMoc Include="threadreadhistorydata.h">
+      <Filter>Thread</Filter>
+    </QtMoc>
+    <QtMoc Include="tableviewloadhistory.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+    <QtMoc Include="loadtablemodel.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+    <QtMoc Include="tablemodel.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+    <QtMoc Include="dialoghistorysetting.h">
+      <Filter>Dialog\HistorySetting</Filter>
+    </QtMoc>
+    <QtMoc Include="plotopera.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="plotwh.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogexportplotdata.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogparallelexport.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogparallel.h">
+      <Filter>Dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="threadexportdata.h">
+      <Filter>Plot</Filter>
+    </QtMoc>
+    <QtMoc Include="tablewidgetexportdata.h">
+      <Filter>TableView</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SARibbonLibDll\SARibbonBard.dll" />
+    <None Include="freeglut.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CpuMemCal.h">
+      <Filter>CpuMeory</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\qt\uic\ui_workarea.h">
+      <Filter>WorkArea</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBoxControler.h">
+      <Filter>MessgeBoxControler</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstFileConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstBasic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstDataType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphPlotSetting.h">
+      <Filter>Plot</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\qt\uic\ui_widgetbasicfrac.h">
+      <Filter>Dialog\FracBasic</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\qt\uic\ui_dialogfracbasic.h">
+      <Filter>Dialog\FracBasic</Filter>
+    </ClInclude>
+    <ClInclude Include="WellDataModel.h">
+      <Filter>WellDataModel</Filter>
+    </ClInclude>
+    <ClInclude Include="AppVersion.h">
+      <Filter>AppVersion</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\qt\uic\ui_widgetfracper.h">
+      <Filter>Dialog\FracPer</Filter>
+    </ClInclude>
+    <ClInclude Include="HistorySettingModel.h">
+      <Filter>LoadSettingModel</Filter>
+    </ClInclude>
+    <ClInclude Include="HistoryLoadDataModel.h">
+      <Filter>LoadSettingModel</Filter>
+    </ClInclude>
+    <ClInclude Include="DataProcess.h">
+      <Filter>DataProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitChange.h">
+      <Filter>UnitChange</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstUnit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTypeMap.h">
+      <Filter>UnitChange</Filter>
+    </ClInclude>
+    <ClInclude Include="TableViewControler.h">
+      <Filter>TableView</Filter>
+    </ClInclude>
+    <ClInclude Include="HistoryDateModel.h">
+      <Filter>HistoryDateModel</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportPlotDataModel.h">
+      <Filter>Plot</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="workarea.ui">
+      <Filter>WorkArea</Filter>
+    </QtUic>
+    <QtUic Include="dialogfracbasic.ui">
+      <Filter>Dialog\FracBasic</Filter>
+    </QtUic>
+    <QtUic Include="widgetbasicfrac.ui">
+      <Filter>Dialog\FracBasic</Filter>
+    </QtUic>
+    <QtUic Include="workareafracbasic.ui">
+      <Filter>WorkArea\FracBasic</Filter>
+    </QtUic>
+    <QtUic Include="widgetfracper.ui">
+      <Filter>Dialog\FracPer</Filter>
+    </QtUic>
+    <QtUic Include="dialogfracper.ui">
+      <Filter>Dialog\FracPer</Filter>
+    </QtUic>
+    <QtUic Include="dialogloaddata.ui">
+      <Filter>Dialog\FracOpera</Filter>
+    </QtUic>
+    <QtUic Include="dialogwaiting.ui">
+      <Filter>Dialog\Waiting</Filter>
+    </QtUic>
+    <QtUic Include="dialoghistorysetting.ui">
+      <Filter>Dialog\HistorySetting</Filter>
+    </QtUic>
+    <QtUic Include="dialogexportplotdata.ui">
+      <Filter>Plot</Filter>
+    </QtUic>
+    <QtUic Include="dialogparallel.ui">
+      <Filter>Dialog</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="freeglut.lib" />
+  </ItemGroup>
+</Project>

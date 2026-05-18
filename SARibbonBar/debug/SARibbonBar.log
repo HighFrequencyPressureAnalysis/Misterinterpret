@@ -1,0 +1,85 @@
+﻿  Generate moc_predefs.h
+   Qt/MSBuild: 3.4.0.1
+   Qt: 6.7.2
+  SAColorGridWidget.cpp
+  SAColorMenu.cpp
+  SAColorPaletteGridWidget.cpp
+  SAColorToolButton.cpp
+  SAFramelessHelper.cpp
+  SARibbonActionsManager.cpp
+  SARibbonApplicationButton.cpp
+  SARibbonApplicationWidget.cpp
+  SARibbonBar.cpp
+  SARibbonButtonGroupWidget.cpp
+  SARibbonCategory.cpp
+  SARibbonCategoryLayout.cpp
+  SARibbonCheckBox.cpp
+  SARibbonColorToolButton.cpp
+  SARibbonComboBox.cpp
+  SARibbonContextCategory.cpp
+  SARibbonControlButton.cpp
+  SARibbonCtrlContainer.cpp
+  SARibbonCustomizeData.cpp
+  SARibbonCustomizeDialog.cpp
+  SARibbonCustomizeWidget.cpp
+  SARibbonElementFactory.cpp
+  SARibbonElementManager.cpp
+  SARibbonGallery.cpp
+  SARibbonGalleryGroup.cpp
+  SARibbonGalleryItem.cpp
+  SARibbonLineEdit.cpp
+  SARibbonLineWidgetContainer.cpp
+  SARibbonMainWindow.cpp
+  SARibbonMenu.cpp
+  SARibbonPannel.cpp
+  SARibbonPannelItem.cpp
+  SARibbonPannelLayout.cpp
+  SARibbonPannelOptionButton.cpp
+  SARibbonQuickAccessBar.cpp
+  SARibbonSeparatorWidget.cpp
+  SARibbonStackedWidget.cpp
+  SARibbonSystemButtonBar.cpp
+  SARibbonTabBar.cpp
+  SARibbonToolButton.cpp
+  SARibbonWidget.cpp
+E:\Code\Ribbon\SARibbon-master\src\SARibbonBar\SARibbonMainWindow.cpp(131,58): warning C4100: “c”: 未引用的形参
+E:\Code\Ribbon\SARibbon-master\src\SARibbonBar\SARibbonCustomizeWidget.cpp(138,88): warning C4100: “bar”: 未引用的形参
+E:\Code\Ribbon\SARibbon-master\src\SARibbonBar\SARibbonCustomizeWidget.cpp(138,70): warning C4100: “cds”: 未引用的形参
+  qrc_SARibbonResource.cpp
+  moc_SAColorGridWidget.cpp
+  moc_SAColorMenu.cpp
+  moc_SAColorPaletteGridWidget.cpp
+  moc_SAColorToolButton.cpp
+  moc_SAFramelessHelper.cpp
+  moc_SARibbonActionsManager.cpp
+  moc_SARibbonApplicationButton.cpp
+  moc_SARibbonApplicationWidget.cpp
+  moc_SARibbonBar.cpp
+  moc_SARibbonButtonGroupWidget.cpp
+  moc_SARibbonCategory.cpp
+  moc_SARibbonCategoryLayout.cpp
+  moc_SARibbonCheckBox.cpp
+  moc_SARibbonColorToolButton.cpp
+  moc_SARibbonComboBox.cpp
+  moc_SARibbonContextCategory.cpp
+  moc_SARibbonControlButton.cpp
+  moc_SARibbonCtrlContainer.cpp
+  moc_SARibbonCustomizeDialog.cpp
+  moc_SARibbonCustomizeWidget.cpp
+  moc_SARibbonGallery.cpp
+  moc_SARibbonGalleryGroup.cpp
+  moc_SARibbonLineEdit.cpp
+  moc_SARibbonMainWindow.cpp
+  moc_SARibbonMenu.cpp
+  moc_SARibbonPannel.cpp
+  moc_SARibbonPannelLayout.cpp
+  moc_SARibbonPannelOptionButton.cpp
+  moc_SARibbonQuickAccessBar.cpp
+  moc_SARibbonSeparatorWidget.cpp
+  moc_SARibbonStackedWidget.cpp
+  moc_SARibbonSystemButtonBar.cpp
+  moc_SARibbonTabBar.cpp
+  moc_SARibbonToolButton.cpp
+  moc_SARibbonWidget.cpp
+    正在创建库 ..\..\bin_qt6.7.2_Debug_x64\bin\\SARibbonBard.lib 和对象 ..\..\bin_qt6.7.2_Debug_x64\bin\\SARibbonBard.exp
+  SARibbonBar.vcxproj -> E:\Code\Ribbon\SARibbon-master\bin_qt6.7.2_Debug_x64\bin\SARibbonBard.dll
