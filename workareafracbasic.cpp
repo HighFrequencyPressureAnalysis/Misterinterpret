@@ -1,17 +1,20 @@
 #include "workareafracbasic.h"
-#include"WellDataControler.h"
-#include"HistoryDateModel.h"
+#include "fracdockpage.h"
+#include "WellDataControler.h"
+
+#include <QVBoxLayout>
 
 WorkAreaFracBasic::WorkAreaFracBasic(QWidget *parent)
 	: QWidget(parent)
 {
-	ui.setupUi(this);
+	auto *layout = new QVBoxLayout(this);
+	layout->setContentsMargins(0, 0, 0, 0);
+
+	m_page = new FracDockPage(this);
+	layout->addWidget(m_page);
+
 	WellDataManager* welldatamanger = SingleTemplate<WellDataManager>::getInstance();
 	welldatamanger->setWorkAreaBasic(this);
-	
-	ui.widgetper->setGroupVisible(false);
-	ui.widgetfracbasic->setLocked(true);
-	
 }
 
 WorkAreaFracBasic::~WorkAreaFracBasic()
@@ -19,51 +22,37 @@ WorkAreaFracBasic::~WorkAreaFracBasic()
 
 void WorkAreaFracBasic::renewFracBasicData(const DataMap&datamap, const StringMap&stringmap)
 {
-	ui.widgetfracbasic->setData(datamap, stringmap);
+	m_page->renewFracBasicData(datamap, stringmap);
 }
 
 void WorkAreaFracBasic::renewFracPerData(const double&bgvalue, const DoubleVector&perdata)
 {
-	ui.widgetper->setData(bgvalue, perdata);
+	m_page->renewFracPerData(bgvalue, perdata);
 }
 
 void WorkAreaFracBasic::renewFracOperaData(const QString&sdatetime,const DoubleVectorMap&data)
 {
-	HistoryDateModel* datemodel = SingleTemplate<HistoryDateModel>::getInstance();
-	datemodel->setFracDateTimeString(sdatetime);
-	ui.plotopera->setDateTime(sdatetime);
-	ui.plotopera->drawOperaGraph(data);
+	m_page->renewFracOperaData(sdatetime, data);
 }
 
 void WorkAreaFracBasic::renewFracTestData(const QString&datetime, const DoubleVectorMap&data)
 {
-	HistoryDateModel* datemodel = SingleTemplate<HistoryDateModel>::getInstance();
-	datemodel->setTestDateTimeString(datetime);
-	DoubleVectorMap plotdata = data;
-	datemodel->checkChangeTestTime(plotdata[s_t]);
-	ui.plotopera->drawTestGraph(plotdata);
+	m_page->renewFracTestData(datetime, data);
 }
 
 void WorkAreaFracBasic::renewFracWHData(const int&freq, const DoubleVector&vp)
 {
-	ui.plotwh->drawPressGraph(freq, vp);
+	m_page->renewFracWHData(freq, vp);
 }
 
 void WorkAreaFracBasic::renewFracMergeData(const DoubleVector&t, const DoubleVector&p)
 {
-	ui.plotopera->drawMergeGraph(t, p);
+	m_page->renewFracMergeData(t, p);
 }
-
-
 
 void WorkAreaFracBasic::clear()
 {
-	ui.widgetfracbasic->setDefault();
-	ui.widgetper->clearTable();
-	ui.plotopera->clearPlot();
-	ui.plotopera->setGraphNull();
-	ui.plotwh->clearPlot();
-	ui.plotwh->setGraphNull();
+	m_page->clear();
 }
 
 

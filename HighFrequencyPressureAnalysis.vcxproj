@@ -172,6 +172,11 @@
     <ClCompile Include="widgetfracper.cpp" />
     <ClCompile Include="workarea.cpp" />
     <ClCompile Include="workareafracbasic.cpp" />
+    <ClCompile Include="fracdockpage.cpp" />
+    <ClCompile Include="dockwidgets\basicfracdockwidget.cpp" />
+    <ClCompile Include="dockwidgets\perforationdockwidget.cpp" />
+    <ClCompile Include="dockwidgets\operadockwidget.cpp" />
+    <ClCompile Include="dockwidgets\whdockwidget.cpp" />
     <None Include="freeglut.dll" />
     <None Include="SARibbonLibDll\SARibbonBard.dll" />
     <QtRcc Include="highfrequencypressureanalysis.qrc" />
@@ -227,6 +232,11 @@
     <QtMoc Include="widgetbasicfrac.h" />
     <QtMoc Include="workareafracbasic.h" />
     <QtMoc Include="widgetfracper.h" />
+    <QtMoc Include="fracdockpage.h" />
+    <QtMoc Include="dockwidgets\basicfracdockwidget.h" />
+    <QtMoc Include="dockwidgets\perforationdockwidget.h" />
+    <QtMoc Include="dockwidgets\operadockwidget.h" />
+    <QtMoc Include="dockwidgets\whdockwidget.h" />
     <QtMoc Include="tableview.h" />
     <QtMoc Include="tableviewperpos.h" />
     <QtMoc Include="toolbutton.h" />

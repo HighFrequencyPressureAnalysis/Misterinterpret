@@ -81,11 +81,12 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="WorkAreaFracBasic" name="tabfrac">
+     <widget class="FracDockPage" name="tabfrac">
       <attribute name="title">
        <string>压裂数据</string>
       </attribute>
      </widget>
+
      <widget class="QWidget" name="tabresult">
       <attribute name="title">
        <string>解释结果</string>
@@ -108,9 +109,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>WorkAreaFracBasic</class>
+   <class>FracDockPage</class>
    <extends>QWidget</extends>
-   <header>workareafracbasic.h</header>
+   <header>fracdockpage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

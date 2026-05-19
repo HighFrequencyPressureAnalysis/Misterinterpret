@@ -22,7 +22,7 @@
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "workareafracbasic.h"
+#include "fracdockpage.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -42,7 +42,7 @@ public:
     QVBoxLayout *verticalLayout;
     QTreeWidget *treeWidget;
     QTabWidget *tabWidgetcompare;
-    WorkAreaFracBasic *tabfrac;
+    FracDockPage *tabfrac;
     QWidget *tabresult;
     QWidget *tabcompare;
     QWidget *tabhighfre;
@@ -116,7 +116,7 @@ public:
 
         tabWidgetcompare = new QTabWidget(WorkAreaClass);
         tabWidgetcompare->setObjectName(QString::fromUtf8("tabWidgetcompare"));
-        tabfrac = new WorkAreaFracBasic();
+        tabfrac = new FracDockPage();
         tabfrac->setObjectName(QString::fromUtf8("tabfrac"));
         tabWidgetcompare->addTab(tabfrac, QString());
         tabresult = new QWidget();

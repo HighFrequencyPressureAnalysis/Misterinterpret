@@ -4,7 +4,9 @@ WidgetFracPer::WidgetFracPer(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	int a = 0;
+	setMinimumSize(0, 0);
+	setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	ui.doubleSpinBoxbg->setMaximum(10000.0);
 	connect(ui.spinBox, SIGNAL(valueChanged(int)), this, SLOT(resetTableView()));
 	QStringList charatypes;

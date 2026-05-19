@@ -5,6 +5,9 @@ WidgetBasicFrac::WidgetBasicFrac(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	setMinimumSize(0, 0);
+	setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	ui.dateTimeEdittime->setDateTime(QDateTime::currentDateTime());
 
 

@@ -19,6 +19,7 @@
 #include"WellDataModel.h"
 #include<qdatastream.h>
 #include"workareafracbasic.h"
+#include"fracdockpage.h"
 #include"ConstDataType.h"
 
 
@@ -60,6 +61,7 @@ public:
     void setTreeWidget(QTreeWidget*);
     void setLabelCurrent(QLabel*);
     void setWorkAreaBasic(WorkAreaFracBasic*);
+    void setFracDockPage(FracDockPage*);
 
     //压裂基础数据
     void setFracBasicData(const DataMap&, const StringMap&);
