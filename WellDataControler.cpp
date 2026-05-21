@@ -153,6 +153,10 @@ void WellDataManager::setPerData(const double&bgvalue, const DoubleVector&perdat
 
 void WellDataManager::renewFracPerData()
 {
+    if (!workareafracbasic) {
+        return;
+    }
+
     QString temppath = currentsavapath + s_slash + s_fracperfile;
     bool isFileExists = QFile::exists(temppath);
     if (isFileExists) {
@@ -202,6 +206,10 @@ void WellDataManager::setOperaData(const QString&datetime, const DoubleVectorMap
 
 void WellDataManager::renewFracOperaData()
 {
+    if (!workareafracbasic) {
+        return;
+    }
+
     QString temppath = currentsavapath + s_slash + s_fracoperafile;
     bool isFileExists = QFile::exists(temppath);
     if (isFileExists) {
@@ -250,6 +258,10 @@ void WellDataManager::setTestData(const QString&datetime, const DoubleVectorMap&
 
 void WellDataManager::renewFracTestData()
 {
+    if (!workareafracbasic) {
+        return;
+    }
+
     QString temppath = currentsavapath + s_slash + s_fractestfile;
     bool isFileExists = QFile::exists(temppath);
     if (isFileExists) {
@@ -299,6 +311,10 @@ void WellDataManager::setFracWHData(const int&freq, const DoubleVector&vp)
 
 void WellDataManager::renewFracWHData()
 {
+    if (!workareafracbasic) {
+        return;
+    }
+
     QString temppath = currentsavapath + s_slash + s_fracwhfile;
     bool isFileExists = QFile::exists(temppath);
     if (isFileExists) {
@@ -347,6 +363,10 @@ void WellDataManager::setFracMergeData(const DoubleVector&t, const DoubleVector&
 
 void WellDataManager::renewFracMergeData()
 {
+    if (!workareafracbasic) {
+        return;
+    }
+
     QString temppath = currentsavapath + s_slash + s_fracmergefile;
     bool isFileExists = QFile::exists(temppath);
     if (isFileExists) {
@@ -380,6 +400,10 @@ void WellDataManager::getFracMergeData(DoubleVector&t, DoubleVector&p)
 
 void WellDataManager::renewFracBasicData()
 {
+    if (!workareafracbasic) {
+        return;
+    }
+
     QString temppath = currentsavapath + s_slash + s_fracbasicfile;
     bool isFileExists = QFile::exists(temppath);
     if (isFileExists) {
@@ -654,6 +678,20 @@ void WellDataManager::addNewStage()
     item->setData(0, Qt::UserRole, segment.id);
     QIcon iconstage(":/HighFrequencyPressureAnalysis/res/Icon/fracstage.jpeg");
     item->setIcon(0, iconstage);
+    currentItem->setExpanded(true);
+    tree->setCurrentItem(item);
+    tree->scrollToItem(item);
+
+    if (labelcurrent) {
+        QStringList path;
+        QTreeWidgetItem* node = item;
+        while (node) {
+            path.prepend(node->text(0));
+            node = node->parent();
+        }
+        labelcurrent->setText(path.join(s_arrow));
+    }
+
     // 提示成功
     messageboxcontroler->showInformationMessageBox("Segment created successfully!");
 }
@@ -1004,6 +1042,11 @@ void WellDataManager::setLabelCurrent(QLabel*p_label)
 
 void WellDataManager::setWorkAreaBasic(WorkAreaFracBasic*workarea)
 {
+    Q_UNUSED(workarea)
+}
+
+void WellDataManager::setFracDockPage(FracDockPage*workarea)
+{
     workareafracbasic = workarea;
 }
 
@@ -1048,25 +1091,25 @@ void WellDataManager::setConnect()
 
 void WellDataManager::onTreeItemClicked(QTreeWidgetItem* item, int column)
 {
+    Q_UNUSED(column)
     if (!item) return;
 
     // 从当前节点往上遍历，收集所有层级名称
     QStringList path;
+    QStringList strfullpath;
     QTreeWidgetItem* current = item;
 
-    QStringList strfullpath;
-    
     while (current) {
-        currentsavapath += s_slash + current->text(0);
         strfullpath.push_back(current->text(0));
         path.prepend(current->text(0)); // 往前插，保证顺序正确
         current = current->parent();    // 往上找父节点
     }
+
     // 拼接成：区块 → 平台 → 井 → 段
     QString fullPath = path.join(s_arrow);
     currentsavapath = wellDataPath;
-    
-    for (int i = strfullpath.size()-1; i >=0 ; i--) {
+
+    for (int i = strfullpath.size() - 1; i >= 0; i--) {
         currentsavapath += s_slash;
         currentsavapath += strfullpath[i];
     }
@@ -1080,17 +1123,15 @@ void WellDataManager::onTreeItemClicked(QTreeWidgetItem* item, int column)
     }
    
     if (strfullpath.size() == 4) {
-        workareafracbasic->clear();
+        if (workareafracbasic) {
+            workareafracbasic->clear();
+        }
         renewFracBasicData();
         renewFracPerData();
         renewFracOperaData();
         renewFracTestData();
         renewFracWHData();
         renewFracMergeData();
-
-    }
-    else {
-
     }
 }
 

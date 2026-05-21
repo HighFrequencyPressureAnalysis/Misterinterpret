@@ -3,6 +3,10 @@
 #include "WellDataControler.h"
 
 #include <QVBoxLayout>
+#include <QSizePolicy>
+#include <QTimer>
+#include <QDebug>
+#include <QShowEvent>
 
 WorkAreaFracBasic::WorkAreaFracBasic(QWidget *parent)
 	: QWidget(parent)
@@ -11,7 +15,26 @@ WorkAreaFracBasic::WorkAreaFracBasic(QWidget *parent)
 	layout->setContentsMargins(0, 0, 0, 0);
 
 	m_page = new FracDockPage(this);
+	m_page->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	layout->addWidget(m_page);
+	layout->setStretch(0, 1);
+	m_page->show();
+
+	qDebug() << "WorkAreaFracBasic create FracDockPage" << m_page;
+	QTimer::singleShot(0, this, [this]() {
+		qDebug() << "WorkAreaFracBasic 0ms update" << m_page << (m_page ? m_page->size() : QSize(-1, -1));
+		if (m_page) {
+			m_page->updateGeometry();
+			m_page->update();
+		}
+	});
+	QTimer::singleShot(100, this, [this]() {
+		qDebug() << "WorkAreaFracBasic 100ms update" << m_page << (m_page ? m_page->size() : QSize(-1, -1));
+		if (m_page) {
+			m_page->updateGeometry();
+			m_page->update();
+		}
+	});
 
 	WellDataManager* welldatamanger = SingleTemplate<WellDataManager>::getInstance();
 	welldatamanger->setWorkAreaBasic(this);
@@ -50,9 +73,19 @@ void WorkAreaFracBasic::renewFracMergeData(const DoubleVector&t, const DoubleVec
 	m_page->renewFracMergeData(t, p);
 }
 
+void WorkAreaFracBasic::showEvent(QShowEvent *event)
+{
+	qDebug() << "WorkAreaFracBasic showEvent" << this << size() << isVisible() << isHidden();
+	QWidget::showEvent(event);
+	QTimer::singleShot(0, this, [this]() {
+		qDebug() << "WorkAreaFracBasic showEvent 0ms" << this << size() << isVisible() << isHidden();
+	});
+	QTimer::singleShot(100, this, [this]() {
+		qDebug() << "WorkAreaFracBasic showEvent 100ms" << this << size() << isVisible() << isHidden();
+	});
+}
+
 void WorkAreaFracBasic::clear()
 {
 	m_page->clear();
 }
-
-

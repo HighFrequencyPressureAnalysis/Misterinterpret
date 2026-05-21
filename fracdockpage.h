@@ -2,14 +2,16 @@
 
 #include <QMainWindow>
 #include <QDockWidget>
+#include <QShowEvent>
+#include <QEvent>
 #include "ConstDataType.h"
 
+class PanelTitleBarWidget;
+class QWidget;
 class BasicFracDockWidget;
 class PerforationDockWidget;
 class OperaDockWidget;
 class WhDockWidget;
-class QToolBar;
-class QAction;
 
 class FracDockPage : public QMainWindow
 {
@@ -28,36 +30,41 @@ public:
 	void clear();
 
 	void setDockInteractionEnabled(bool enabled);
-	QByteArray saveLayoutState() const;
-	bool restoreLayoutState(const QByteArray& state);
-	void saveCurrentLayoutState();
-	void resetSavedLayoutState();
-	static QString layoutSettingsKey();
-	static QString firstRunKey();
-	static QString debugLogPath();
 
 protected:
 	void showEvent(QShowEvent *event) override;
-	void closeEvent(QCloseEvent *event) override;
+	bool eventFilter(QObject *watched, QEvent *event) override;
 
-private:
+public:
+	struct DockEntry
+	{
+		QDockWidget* dock = nullptr;
+		PanelTitleBarWidget* titleBar = nullptr;
+		QWidget* content = nullptr;
+		QMainWindow* popup = nullptr;
+		QWidget* popupHost = nullptr;
+		Qt::DockWidgetArea originalArea = Qt::LeftDockWidgetArea;
+	};
+
+	QWidget* createDockTitleBar(const QString& title, DockEntry* entry);
+	void toggleDockPopup(DockEntry* entry);
+	void restoreDockPopup(DockEntry* entry);
+	void updateDockTitleBarState(DockEntry* entry, bool maximized);
 	void createDockWidgets();
 	void createDockLayout();
 	void setupDefaultLayout();
 	void applyInitialDockSizes();
-	void createLayoutToolbar();
-
-private slots:
-	void resetLayoutToDefault();
+	void applyDeferredLayoutCorrection();
+	void refreshDockLayout();
+	void closeEvent(QCloseEvent *event) override;
 
 private:
-	QDockWidget *m_basicDock = nullptr;
-	QDockWidget *m_perDock = nullptr;
-	QDockWidget *m_operaDock = nullptr;
-	QDockWidget *m_whDock = nullptr;
-	QToolBar *m_layoutToolbar = nullptr;
-	QAction *m_resetLayoutAction = nullptr;
+	DockEntry m_basicEntry;
+	DockEntry m_perEntry;
+	DockEntry m_operaEntry;
+	DockEntry m_whEntry;
 	bool m_initialLayoutApplied = false;
+	bool m_layoutInitialized = false;
 
 	BasicFracDockWidget *m_basicWidget = nullptr;
 	PerforationDockWidget *m_perWidget = nullptr;

@@ -108,7 +108,7 @@ private:
     QString currentsavapath;
     QLabel* labelcurrent = nullptr;
     QTreeWidget* tree=nullptr;
-    WorkAreaFracBasic* workareafracbasic = nullptr;
+    FracDockPage* workareafracbasic = nullptr;
     Category* category = nullptr;
     void loadFromFolder(const QString&rootPath);
  

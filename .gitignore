@@ -1,0 +1,42 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+ipch/
+*.ipch
+*.opensdf
+*.sdf
+
+# Build outputs
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.tlog
+*.idb
+*.ilk
+*.pdb
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.res
+*.iobj
+*.ipdb
+
+# Qt / MSVC generated under project folders
+*_autogen/
+*.moc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp

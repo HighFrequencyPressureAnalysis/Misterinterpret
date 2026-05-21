@@ -12,6 +12,7 @@ public:
 
 private:
 	Ui::WorkAreaClass ui;
+
 private slots:
 	void clearChoose();
 };

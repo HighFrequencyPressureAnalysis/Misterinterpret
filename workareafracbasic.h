@@ -21,6 +21,9 @@ public:
 	void renewFracMergeData(const DoubleVector&, const DoubleVector&);
 	void clear();
 
+protected:
+	void showEvent(QShowEvent *event) override;
+
 private:
 	FracDockPage *m_page = nullptr;
 };

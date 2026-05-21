@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
     HighFrequencyPressureAnalysis w;
     //qDebug() << "window build cost:" << cost.elapsed() << " ms";
-    w.showMaximized();
+    w.showFullScreen();
 
     return app.exec();
 	
